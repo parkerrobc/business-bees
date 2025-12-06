@@ -46,7 +46,7 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
     } finally {
         // Re-enable button
         submitButton.disabled = false;
-        submitButton.innerHTML = 'Subscribe <span class="button-icon">🐝</span>';
+        submitButton.innerHTML = 'Subscribe <img src="assets/bee-icon.svg" alt="" class="button-icon">';
     }
 });
 
