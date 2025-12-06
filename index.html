@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Bees - Subscribe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Bee decorations -->
+            <div class="bee-decoration bee-left">
+                <img src="assets/bee-1.png" alt="Bee" class="floating-bee">
+            </div>
+            <div class="bee-decoration bee-right">
+                <img src="assets/bee-2.png" alt="Bee" class="floating-bee-reverse">
+            </div>
+
+            <!-- Main content -->
+            <div class="main-content">
+                <div class="logo">
+                    <img src="assets/bee-logo.svg" alt="Business Bees Logo" class="logo-bee">
+                </div>
+                
+                <h1 class="title">Business Bees</h1>
+                
+                <p class="description">
+                    Subscribe to our mailing list so you can receive updates about the games process, rules, and more!
+                </p>
+
+                <!-- Subscription form -->
+                <form id="subscribeForm" class="subscribe-form">
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email address"
+                            required
+                            class="email-input"
+                        >
+                        <button type="submit" class="subscribe-button">
+                            Subscribe
+                            <span class="button-icon">🐝</span>
+                        </button>
+                    </div>
+                    <div id="message" class="message"></div>
+                </form>
+
+                <!-- Honeycomb pattern decoration -->
+                <div class="honeycomb-pattern"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

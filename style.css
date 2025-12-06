@@ -1,0 +1,275 @@
+/* Color scheme from Business Bees */
+:root {
+    --bg-tan: #fefad3;
+    --black: #231f20;
+    --yellow: #fdc821;
+    --orange: #f89421;
+    --blue: #265283;
+    --silver: #939598;
+    --red: #ee2e2d;
+    --brown: #442e2a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-tan);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.content {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 40px rgba(35, 31, 32, 0.1);
+    border: 3px solid var(--yellow);
+}
+
+.main-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 1.5rem;
+}
+
+.logo-bee {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0 var(--yellow);
+}
+
+.description {
+    font-size: 1.25rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subscribe-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.email-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: 3px solid var(--orange);
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: var(--bg-tan);
+}
+
+.email-input:focus {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 4px rgba(253, 200, 33, 0.2);
+    background: white;
+}
+
+.subscribe-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, var(--orange), var(--yellow));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(248, 148, 33, 0.4);
+}
+
+.subscribe-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(248, 148, 33, 0.6);
+}
+
+.subscribe-button:active {
+    transform: translateY(0);
+}
+
+.button-icon {
+    font-size: 1.3rem;
+    animation: wiggle 1s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.message {
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    text-align: center;
+    min-height: 20px;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+/* Bee decorations */
+.bee-decoration {
+    position: absolute;
+    z-index: 1;
+}
+
+.bee-left {
+    top: 20px;
+    left: 20px;
+}
+
+.bee-right {
+    top: 20px;
+    right: 20px;
+}
+
+.floating-bee, .floating-bee-reverse {
+    width: 80px;
+    height: 80px;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-bee-reverse {
+    animation: float-reverse 3s ease-in-out infinite;
+    transform: scaleX(-1);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-reverse {
+    0%, 100% {
+        transform: scaleX(-1) translateY(0px);
+    }
+    50% {
+        transform: scaleX(-1) translateY(-20px);
+    }
+}
+
+/* Honeycomb pattern */
+.honeycomb-pattern {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+    opacity: 0.1;
+    background: repeating-linear-gradient(
+        60deg,
+        var(--yellow) 0px,
+        var(--yellow) 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    .email-input {
+        min-width: 100%;
+    }
+    
+    .subscribe-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .bee-decoration {
+        display: none;
+    }
+    
+    .content {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .logo-bee {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+}
